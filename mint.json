@@ -39,18 +39,18 @@
     {
       "group": "Slinky",
       "pages": [
-        "overview",
-        "security-properties",
-        "incentivize-slashing",
+        "skip-slinky/overview",
+        "skip-slinky/security-properties",
+        "skip-slinky/incentivize-slashing",
         {
           "group": "Validator Docs",
           "pages": [
-            "validator-docs/quickstart",
-            "validator-docs/validator-config-ref",
-            "validator-docs/slinky-troubleshoot"
+            "skip-slinky/validator-docs/quickstart",
+            "skip-slinky/validator-docs/validator-config-ref",
+            "skip-slinky/validator-docs/slinky-troubleshoot"
           ]
         },
-        "upcoming-features"
+        "skip-slinky/upcoming-features"
       ]
     }
   ],
