@@ -35,33 +35,22 @@
   "modeToggle": {
     "default": "dark"
   },
-  "topAnchor": {
-    "name": "Slinky",
-    "icon": "wand-magic-sparkles"
-  },
-  "anchors": [
-    {
-      "name": "Home",
-      "icon": "house",
-      "url": "https://skip.mintlify.app"
-    }
-  ],
   "navigation": [
     {
       "group": "Slinky",
       "pages": [
-        "docs/overview",
-        "docs/security-properties",
-        "docs/incentivize-slashing",
+        "overview",
+        "security-properties",
+        "incentivize-slashing",
         {
           "group": "Validator Docs",
           "pages": [
-            "docs/validator-docs/quickstart",
-            "docs/validator-docs/validator-config-ref",
-            "docs/validator-docs/slinky-troubleshoot"
+            "validator-docs/quickstart",
+            "validator-docs/validator-config-ref",
+            "validator-docs/slinky-troubleshoot"
           ]
         },
-        "docs/upcoming-features"
+        "upcoming-features"
       ]
     }
   ],
