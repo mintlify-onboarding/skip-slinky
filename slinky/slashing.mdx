@@ -1,8 +1,9 @@
 ---
-title: 'Incentivization & Slashing'
+description: Slinky Incentivization Method
+title: ⚖️ Incentivization & Slashing
 ---
 
-## 🤝 Validators and Slinky[​](#-validators-and-slinky 'Direct link to heading')
+## 🤝 Validators and Slinky
 
 ✅ **Validators are the lifeblood of Slinky operation** - Slinky is a restaking product. This means it reuses all available network stake of a protocol to secure oracle operation. To do this, validators need to run the infrastructure required for Slinky to operate.
 
@@ -12,7 +13,7 @@ title: 'Incentivization & Slashing'
 
 ✅ **Validators can be punished for misuse** - As they are with the consensus process, validators can be punished if they don't report prices or report incorrect prices. As long as validators follow the correct operation guides and act honestly, this should never happen. To ensure its accuracy, Slinky has two prebuilt mechanisms to enable slashing.
 
-## 💰 Reward Mechanism[​](#-reward-mechanism 'Direct link to heading')
+## 💰 Reward Mechanism
 
 - When Slinky is integrated, it can assign per-block rewards to validators who operate it correctly. Correct operation means:
   - posting prices reliably
@@ -20,25 +21,25 @@ title: 'Incentivization & Slashing'
 
 Rewards can come from various sources. The easiest to implement is an additional share of inflation yield. However, Slinky also can support sharing of trading-fees and any arbitrary source of revenue.
 
-<Note>
+<Info>
 
 We Share Everything
 
 Skip is dedicated to rewarding validators. For any fees a chain agrees to pay Skip for Slinky operation, we share 20% of this with the validators who operate it.
 
-</Note>
+</Info>
 
-With fee sharing, a fixed amount of fees is shared **per-block** to validators that correctly operate Slinky.
+With fee sharing, a fixed amount of fees is shared <b>per-block</b> to validators that correctly operate Slinky.
 
 - This means, if `$1000` was allocated for a certain block, and only 10 validators correctly operated Slinky that block, each validator would recieve an additional `$100` on top of their block rewards.
 
-Note that the Slinky reward is **additional** to normal validator commission.
+Note that the Slinky reward is <b>additional</b> to normal validator commission.
 
-## 📉 Downtime slashing[​](#-downtime-slashing 'Direct link to heading')
+## 📉 Downtime slashing
 
 Slinky comes prebuilt with the optional `x/sla` module, which enforces a minimum Service-Level Agreement (SLA) on validators and is verified on-chain.
 
-See the code here: [https://github.com/skip-mev/slinky/tree/main/x/sla](https://github.com/skip-mev/slinky/tree/main/x/sla)
+See the code here: https://github.com/skip-mev/slinky/tree/main/x/sla
 
 The SLA module is designed to issue a (small) slash whenever a validator doesn't meet the uptime SLA for a specific price feed over a moving window of blocks. For example, with an SLA set to `80%` for a currency pair (e.g. `ETH/USDC`) over a block-window of `100`, then:
 
@@ -70,9 +71,9 @@ Here is a rundown of the parameters for `x/sla`:
 - `MinStakeWeightToSlash` (e.g. `0.66` = 66% of stake weight)
   - This is the minimum cumulative stake weight of validator price reports that is required before **any** slashing happens. This constitutes the "grace period" when a new currency pair is added and validators are getting set up.
 
-## ❌ Incorrect-price slashing[​](#-incorrect-price-slashing 'Direct link to heading')
+## ❌ Incorrect-price slashing
 
-Downtime is serious, but not as serious as the network reporting incorrect prices. To prevent this, we have an exact replica of the **[ChainLink Town Crier](https://blog.chain.link/town-crier-and-chainlink/)** mechanism implemented as the `x/alerts` module.
+Downtime is serious, but not as serious as the network reporting incorrect prices. To prevent this, we have an exact replica of the <b>[ChainLink Town Crier](https://blog.chain.link/town-crier-and-chainlink/)</b> mechanism implemented as the `x/alerts` module.
 
 The `x/alerts` module does not slash individual mistakes or one-off errors. It activates when a permissionless `alerter` raises an alarm that the **entire network** has reported an incorrect price. The `alerter` has to post a `bond`, which is money they put up and legitimizes their claim.
 
@@ -85,4 +86,4 @@ This process is not designed to be even a remotely common occurrence. Slashing i
 
 For chains that wish to enable `x/alerts`, please contact us so we can help you implement it correctly. It is a highly sophisticated and nuanced system.
 
-![](/images/slinky-town-crier.png)
+<img src='/img/slinky-town-crier.png' width="100%"/>

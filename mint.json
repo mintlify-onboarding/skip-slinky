@@ -37,20 +37,67 @@
   },
   "navigation": [
     {
-      "group": "Slinky",
+      "group": "✨ About",
       "pages": [
-        "overview",
-        "security-properties",
-        "incentivize-slashing",
+        "about/intro",
+        "about/faq"
+      ]
+    },
+    {
+      "group": "🔮 Slinky",
+      "pages": [
+        "slinky/overview",
+        "slinky/security-properties",
+        "slinky/slashing",
         {
-          "group": "Validator Docs",
+          "group": "👾 Validator Docs",
           "pages": [
-            "validator-docs/quickstart",
-            "validator-docs/validator-config-ref",
-            "validator-docs/slinky-troubleshoot"
+            "slinky/validator/quickstart",
+            "slinky/validator/validator-app-config",
+            "slinky/validator/validator-slinky-config",
+            "slinky/validator/troubleshooting",
+            "slinky/validator/rpc-providers",
+            "slinky/validator/flags-guide",
+            "slinky/validator/migration-guide"
           ]
         },
-        "upcoming-features"
+        "slinky/upcoming-work",
+        {
+          "group": "🛠️ Using Slinky",
+          "pages": [
+            "slinky/using-slinky/high-level",
+            "slinky/using-slinky/neutron-sdk"
+          ]
+        },
+        {
+          "group": "⛓ Chain Integrations",
+          "pages": [
+            "slinky/integrations/dydx",
+            "slinky/integrations/neutron"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "🧊 Block SDK",
+      "pages": [
+        "blocksdk/integrate-the-sdk",
+        "blocksdk/how-it-works",
+        "blocksdk/searcher-docs",
+        {
+          "group": "🌈 Lane App Store",
+          "pages": [
+            {
+              "group": "🎁 Choose Your Lanes",
+              "pages": [
+                "blocksdk/lanes/existing-lanes/mev",
+                "blocksdk/lanes/existing-lanes/free",
+                "blocksdk/lanes/existing-lanes/fee-market"
+              ]
+            },
+            "blocksdk/lanes/build-your-own-lane"
+          ]
+        }
       ]
     }
   ],
